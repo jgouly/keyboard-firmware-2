@@ -1,5 +1,13 @@
 language: cpp
-sudo: false
+sudo: required
+
+install:
+  - export DEBIAN_FRONTEND=noninteractive
+  - sudo -E apt-add-repository -y "ppa:george-edison55/precise-backports"
+  - sudo apt-get update -qq
+  - sudo apt-get purge cmake -qq
+  - sudo apt-get install cmake -qq
+  - sudo apt-get install gcc-arm-none-eabi -qq
 
 script: mkdir build && cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=mpad6 && make
 
@@ -8,5 +16,3 @@ addons:
     sources:
     - debian-sid
     - george-edison55-precise-backports
-    packages:
-    - gcc-arm-none-eabi
