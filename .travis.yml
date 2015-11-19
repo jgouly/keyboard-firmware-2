@@ -9,6 +9,7 @@ install:
   - sudo apt-get purge cmake -qq
   - sudo apt-get install cmake cmake-data -qq
   - sudo apt-get install gcc-arm-none-eabi -qq
+  - CC=gcc-4.8 CXX=g++-4.8
 
 script:
   - mkdir build-$BOARD
@@ -21,3 +22,11 @@ script:
 env:
   - BOARD=mpad6 EXTRA="-DCMAKE_TOOLCHAIN_FILE=../arm.cmake"
   - BOARD=test
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
