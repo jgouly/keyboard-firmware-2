@@ -1,7 +1,7 @@
 language: cpp
 sudo: false
 
-script: mkdir build && cd build && cmake .. -DBOARD=mpad6 && make
+script: mkdir build && cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=mpad6 && make
 
 addons:
   apt:
@@ -10,3 +10,4 @@ addons:
     packages:
     - cmake
     - cmake-data
+    - gcc-arm-none-eabi
