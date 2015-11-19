@@ -11,8 +11,9 @@ install:
   - sudo apt-get install gcc-arm-none-eabi -qq
 
 script:
-  - mkdir build
-  - cd build
+  - mkdir build-$BOARD
+  - cd build-$BOARD
+  - pwd
   - cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=$BOARD
   - make
   - size bin/firmware.elf
