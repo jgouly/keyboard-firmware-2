@@ -1,0 +1,31 @@
+language: cpp
+sudo: required
+
+install:
+  - export DEBIAN_FRONTEND=noninteractive
+  - sudo -E apt-add-repository -y "ppa:george-edison55/precise-backports"
+  - sudo -E add-apt-repository -y "ppa:terry.guo/gcc-arm-embedded"
+  - sudo apt-get update -qq
+  - sudo apt-get purge cmake -qq
+  - sudo apt-get install cmake cmake-data -qq
+  - sudo apt-get install gcc-arm-none-eabi -qq
+  - CC=gcc-4.8 CXX=g++-4.8
+
+script:
+  - mkdir build
+  - cd build
+  - cmake .. -DBOARD=$BOARD $EXTRA_CMAKE_ARGS
+  - make
+  - size bin/firmware.elf
+
+env:
+  - BOARD=mpad6 EXTRA_CMAKE_ARGS="-DCMAKE_TOOLCHAIN_FILE=../arm.cmake"
+  - BOARD=host-test
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
