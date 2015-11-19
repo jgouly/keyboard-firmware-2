@@ -10,9 +10,3 @@ install:
   - sudo apt-get install gcc-arm-none-eabi -qq
 
 script: mkdir build && cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=mpad6 && make
-
-addons:
-  apt:
-    sources:
-    - debian-sid
-    - george-edison55-precise-backports
