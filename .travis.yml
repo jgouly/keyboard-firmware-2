@@ -9,5 +9,4 @@ addons:
     - debian-sid
     - george-edison55-precise-backports
     packages:
-    - cmake
     - gcc-arm-none-eabi
