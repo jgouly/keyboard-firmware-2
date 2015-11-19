@@ -10,4 +10,4 @@ addons:
     packages:
     - cmake
     - cmake-data
-    - gcc-arm-none-eabi
+    - gcc-arm-linux-gnueabihf
