@@ -6,6 +6,6 @@ script: mkdir build && cd build && cmake .. -DBOARD=mpad6 && make
 addons:
   apt:
     sources:
-    - george-edison55/precise-backports
+    - ppa:kubuntu-ppa/backports
     packages:
-    - &full_apt [cmake]
+    - cmake
