@@ -14,10 +14,10 @@ script:
   - mkdir build-$BOARD
   - cd build-$BOARD
   - pwd
-  - cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=$BOARD
+  - cmake .. ${EXTRA} -DBOARD=$BOARD
   - make
   - size bin/firmware.elf
 
 env:
-  - BOARD=mpad6
+  - BOARD=mpad6 EXTRA="-DCMAKE_TOOLCHAIN_FILE=../arm.cmake"
   - BOARD=test
