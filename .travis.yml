@@ -7,7 +7,7 @@ addons:
   apt:
     sources:
     - george-edison55-precise-backports
-    - ubuntu-precise
+    - debian-sid
     packages:
     - cmake
     - cmake-data
