@@ -6,8 +6,8 @@ script: mkdir build && cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake 
 addons:
   apt:
     sources:
-    - george-edison55-precise-backports
     - debian-sid
+    - george-edison55-precise-backports
     packages:
     - cmake
     - cmake-data
