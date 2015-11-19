@@ -13,6 +13,9 @@ install:
 script:
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=mpad6
+  - cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=$BOARD
   - make
   - size bin/firmware.elf
+
+env:
+  - BOARD=mpad6
