@@ -6,7 +6,7 @@ install:
   - sudo -E apt-add-repository -y "ppa:george-edison55/precise-backports"
   - sudo apt-get update -qq
   - sudo apt-get purge cmake -qq
-  - sudo apt-get install cmake -qq
+  - sudo apt-get install cmake cmake-data -qq
   - sudo apt-get install gcc-arm-none-eabi -qq
 
 script: mkdir build && cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=mpad6 && make
