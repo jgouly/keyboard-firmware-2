@@ -10,4 +10,9 @@ install:
   - sudo apt-get install cmake cmake-data -qq
   - sudo apt-get install gcc-arm-none-eabi -qq
 
-script: mkdir build && cd build && cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=mpad6 && make
+script:
+  - mkdir build
+  - cd build
+  - cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=mpad6
+  - make
+  - size bin/firmware.elf
