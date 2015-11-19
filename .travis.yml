@@ -15,4 +15,5 @@ script:
   - cd build
   - cmake .. -DCMAKE_TOOLCHAIN_FILE=../arm.cmake -DBOARD=mpad6
   - make
+  - nm src/target/kinetis/mkl27z/libtarget.a
   - size bin/firmware.elf
