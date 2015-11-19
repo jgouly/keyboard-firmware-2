@@ -1,11 +1,11 @@
 language: cpp
-sudo: required
+sudo: false
 
 script: mkdir build && cd build && cmake .. -DBOARD=mpad6 && make
 
 addons:
   apt:
     sources:
-    - &full_sources [george-edison55/precise-backports]
+    - george-edison55/precise-backports
     packages:
     - &full_apt [cmake]
