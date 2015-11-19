@@ -10,5 +10,4 @@ addons:
     - george-edison55-precise-backports
     packages:
     - cmake
-    - cmake-data
     - gcc-arm-none-eabi
