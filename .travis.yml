@@ -20,3 +20,4 @@ script:
 
 env:
   - BOARD=mpad6
+  - BOARD=test
