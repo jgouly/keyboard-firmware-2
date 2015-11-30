@@ -1,4 +1,5 @@
-add_executable(firmware.elf main.cpp)
+add_executable(firmware.elf main.cpp ../common/scan.cpp)
+#set_target_properties(firmware.elf PROPERTIES LINKER_LANGUAGE C)
 if(${TARGET} STREQUAL "host")
   set(TARGET_LIB target)
 else()

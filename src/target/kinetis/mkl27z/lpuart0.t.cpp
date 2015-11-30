@@ -61,3 +61,16 @@ void lpuart0_putc(uint8_t c) {
   while ((LPUART0_STAT & (1 << 23)) == 0);*/
   GPIOB_PTOR |= (1 << 19);
 }
+
+void lpuart0_putch(uint8_t c) {
+  lpuart0_putc('0');
+  lpuart0_putc('b');
+  lpuart0_putc(c & (1 << 7) ? '1' : '0');
+  lpuart0_putc(c & (1 << 6) ? '1' : '0');
+  lpuart0_putc(c & (1 << 5) ? '1' : '0');
+  lpuart0_putc(c & (1 << 4) ? '1' : '0');
+  lpuart0_putc(c & (1 << 3) ? '1' : '0');
+  lpuart0_putc(c & (1 << 2) ? '1' : '0');
+  lpuart0_putc(c & (1 << 1) ? '1' : '0');
+  lpuart0_putc(c & (1 << 0) ? '1' : '0');
+}

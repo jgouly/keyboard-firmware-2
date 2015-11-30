@@ -12,4 +12,7 @@ if (NOT TARGET)
   message(FATAL_ERROR "TARGET must be set!")
 endif ()
 
+include_directories(include)
+include_directories(board/${BOARD})
+
 add_subdirectory(src)
